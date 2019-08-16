@@ -7,8 +7,8 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 FROM openjdk:8
 LABEL "MAINTAINER"="David Li <legendarilylwq@gmail.com>"
 
-COPY --from=build /usr/src/app/target/registry-0.0.1.jar /usr/app/registry.jar  
+COPY --from=build /usr/src/app/target/gateway-0.0.1.jar /usr/app/gateway.jar  
 
-ENTRYPOINT ["java", "-Xmx200m", "-jar", "/usr/app/registry.jar"]
+ENTRYPOINT ["java", "-Xmx200m", "-jar", "/usr/app/gateway.jar"]
 
-EXPOSE 28821
+EXPOSE 28899
